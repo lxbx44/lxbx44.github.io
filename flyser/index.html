@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Include Prism.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-dark.css" />
+
+    <!-- Include additional language-specific plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-rust.min.js"></script>
+
+    <!-- ! Styles -->
+    <link rel="stylesheet" href="/css/prj_template.css">
+
+    <!-- ! Icons -->
+    <script src="https://kit.fontawesome.com/d90e43a863.js" crossorigin="anonymous"></script>
+
+    <!-- ! Web icons -->
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/lxbx44/flyser/main/.data/icon.png">
+
+
+    <title>Roger Fibla</title>
+</head>
+<body>
+
+    <div class="topbar">
+        <a href="/"><i class="fa-brands fa-slack"></i> Home</a>
+        <a href="/projects">Projects</a>
+    </div>
+
+
+    <div class="content">
+        <div class="main">
+            <h1><img style="margin-right: 0;" src="https://raw.githubusercontent.com/lxbx44/flyser/main/.data/icon.png"></img>
+                Flyser: Easily Analyze and Extract Insights from Your Files</h1>
+            
+            <button class="information"><i class="fa-solid fa-info"></i> Information</button>
+
+            <div class="pm">
+                <p>Welcome to Flyser! A simple file analyzer developed in Rust. With Flyser, you can easily analyze various file properties and get valuable information about your files. Let's explore how you can install and use Flyser to analyze your files.</p>
+
+                
+                <img style="width: 90%; margin-top: 1.5rem; margin-left: 0.5rem; border-radius: 10px;" src="https://raw.githubusercontent.com/lxbx44/flyser/main/.data/img.png"></img>
+
+
+                <h2>Installation</h2>
+                <p>To get started with Flyser, follow the installation instructions below:</p>
+                <h3>Requirements</h3>
+                <ul>
+                    <li class="col" style="width: fit-content;padding: 0 0.7rem;">Rust</li>
+                    <li class="col" style="width: fit-content;padding: 0 0.7rem;">Cargo</li>
+                </ul>
+                <h4>Install Rust and Cargo</h4>
+                <p>Before installing Flyser, make sure you have Rust and Cargo installed on your system. Here's how to install them:</p>
+                <h5>Linux / macOS:</h5>
+                <p class="code">
+                curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+                </p>
+                <p class="code">
+                source $HOME/.cargo/env
+                </p>
+                <h5>Windows:</h5>
+                <p>Download the Rust installer from the <a href="https://www.rust-lang.org/tools/install">official website</a>. Follow the installation instructions to install Rust and Cargo.</p>
+                <h4>Clone and Build</h4>
+                <ol>
+                    <li>Clone the Flyser repository:</li>
+                </ol>
+                <p class="code">
+                git clone https://github.com/lxbx44/flyser.git
+                </p>
+                <p class="code">
+                cd flyser/
+                </p>
+                <ol start="2">
+                    <li>Build the project:</li>
+                </ol>
+                <p class="code">
+                cargo build --release
+                </p>
+                <h2>Usage</h2>
+                <p>To start using Flyser, run the following command in the project directory:</p>
+                <p class="code">
+                flyser [file name]
+                </p>
+                <p>Replace [file name] with the name or path to the file you want to analyze. For example, if you want to analyze the file "src/main.rs", use the following command:</p>
+                <p class="code">
+                flyser src/main.rs
+                </p>
+                <p>Once you run the command, Flyser will analyze the file and display information such as file name, file type, file path, file size, number of lines, number of words, and number of characters in a formatted table.</p>
+
+                <h2>How Does the Program Work?</h2>
+                <p>Flyser leverages the Rust programming language to provide file analysis capabilities. Let's take a closer look at some key aspects of the program:</p>
+
+                <h3>Parsing Command-Line Arguments</h3>
+                <p>Flyser utilizes the <span class="col">`clap`</span> crate to parse command-line arguments. Here's an example of the <span class="col">`Args`</span> structure used for argument parsing:</p>
+                <pre><code class="language-rust">use clap::Parser;
+
+#[derive(Parser, Debug)]
+#[command(author, version, about, long_about = None)]
+struct Args {
+    file_name: String,
+}</code></pre>
+
+                <h3>Opening and Analyzing Files</h3>
+                <p>Once the command-line arguments are parsed, Flyser opens and analyzes the specified file. It extracts various properties, such as file type, file size, number of lines, words, and characters.</p>
+                <p>Here's an example of opening and analyzing a file in Flyser:</p>
+                <pre><code class="language-rust">use std::fs::File;
+use std::io::BufRead;
+use std::io::BufReader;
+
+// ...
+
+let file = match File::open(&file_path) {
+    Ok(file) => file,
+    Err(_) => {
+        println!("Could not open the file!");
+        return;
+    }
+};
+
+let file_buffer = BufReader::new(&file);
+
+let (line_count, word_count, char_count) =
+    file_buffer.lines().fold((0, 0, 0), |counts, line_result| {
+        let line = line_result.unwrap_or_else(|_| String::new());
+        (
+            counts.0 + 1,
+            counts.1 + line.split_whitespace().count(),
+            counts.2 + line.chars().count(),
+        )
+    });
+
+// Display the analyzed file properties
+// ...</code></pre>
+
+                <h3>Formatting and Displaying Results</h3>
+                <p>Once the file properties are extracted, Flyser formats the results and displays them in a table. It utilizes the <span class="col">`comfy_table`</span> crate for generating formatted tables.</p>
+
+                <h2>Conclusion</h2>
+                <p>Flyser offers a simple and efficient way to analyze your files. By using this tool, you can quickly obtain important file information and gain insights into your data. Give Flyser a try and simplify your file analysis process!</p>
+                <br><br><br>
+            </div>
+
+            <div class="info">
+                <h1 id="infoClose"><i class="fa-solid fa-circle-xmark"></i></h1>
+
+                <h3><i class="fa-solid fa-file"></i> Project Name:</h3>
+                <p>Flyser</p>
+                <br>
+
+                <h3><i class="fa-solid fa-user"></i> Author:</h3>
+                <p>Aria</p>
+                <br>
+
+
+                <h3><i class="fa-solid fa-users"></i> Contributors</h3>
+                <p>Slushee</p>
+                <br>
+
+                <h3><i class="fa-solid fa-code"></i> Programming language:</h3>
+                <p>Rust <i class="fa-brands fa-rust"></i></p>
+                <br>
+
+                <h3><i class="fa-brands fa-github"></i> GitHub:</h3>
+                <p><a href="https://github.com/lxbx44/flyser/">repo</a></p>
+                <br>
+
+                <h3><i class="fa-solid fa-stamp"></i> License</h3>
+                <p>Apache-2.0 license</p>
+
+            </div>
+
+
+        </div>
+
+    <div class="popup">Text Copied!</div>
+<!---->
+
+    <script src="/js/prj_temp.js"></script>
+    <script>
+        Prism.highlightAll();
+    </script>
+</body>
+</html>
+
