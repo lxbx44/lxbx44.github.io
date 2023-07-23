@@ -9,6 +9,22 @@
     width: 17rem;
   }
 }
+@keyframes typing2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 13rem;
+  }
+}
+@keyframes typing3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 11rem;
+  }
+}
 /* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to {
@@ -75,6 +91,12 @@ html {
 
 body {
   background-color: #232634;
+  background-image: url("/img/bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-position: auto center;
+  background-attachment: fixed;
   font-family: "JetBrains Mono", monospace;
   overflow-x: hidden;
 }
@@ -98,6 +120,9 @@ body {
   color: #232634;
   background-color: #99d1db;
   border-radius: 20px;
+}
+.topbar a:nth-child(1) i {
+  font-size: 1.2rem;
 }
 
 .code {
@@ -200,6 +225,7 @@ body {
   padding-bottom: 3rem;
   border-radius: 10px;
   color: #babbf1;
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.062745098);
 }
 .content .info h1 {
   position: absolute;
@@ -307,6 +333,22 @@ pre[class*=language-] code {
   }
   .content .info h1 {
     display: block;
+  }
+}
+@media (max-width: 500px) {
+  .topbar a {
+    font-size: 1.4rem;
+  }
+  .topbar a:nth-child(1) i {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 345px) {
+  .topbar a {
+    font-size: 1rem;
+  }
+  .topbar a:nth-child(1) i {
+    font-size: 0.75rem;
   }
 }
 

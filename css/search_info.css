@@ -15,6 +15,11 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: #232634;
+  background-image: url("/img/bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-position: auto center;
 }
 
 .info-1 {
@@ -42,4 +47,6 @@ body {
 .image {
   height: 25px;
   width: 25px;
-}/*# sourceMappingURL=search_info.css.map */
+}
+
+/*# sourceMappingURL=search_info.css.map */

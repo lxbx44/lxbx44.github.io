@@ -9,6 +9,22 @@
     width: 17rem;
   }
 }
+@keyframes typing2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 13rem;
+  }
+}
+@keyframes typing3 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 11rem;
+  }
+}
 /* The typewriter cursor effect */
 @keyframes blink-caret {
   from, to {
@@ -34,6 +50,36 @@
     right: 0;
   }
 }
+@keyframes popupPrj {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes popupIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes popupOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -48,6 +94,11 @@ body {
   height: 100vh;
   width: 100vw;
   background-color: #232634;
+  background-image: url("/img/bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  background-position: auto center;
   overflow: hidden;
 }
 
@@ -71,6 +122,9 @@ body {
 }
 .topbar .links a i:hover {
   color: #99d1db;
+}
+.topbar .links a:nth-child(2) i {
+  font-size: 24px;
 }
 .topbar .info {
   position: absolute;
@@ -331,4 +385,6 @@ body {
   #apps_popup > div div a {
     font-size: 4vw;
   }
-}/*# sourceMappingURL=search.css.map */
+}
+
+/*# sourceMappingURL=search.css.map */

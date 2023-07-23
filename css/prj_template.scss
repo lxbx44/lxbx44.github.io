@@ -36,6 +36,13 @@ html {
 
 body {
     background-color: $bg-1;
+    background-image: url('/img/bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-position: auto center;
+    background-attachment: fixed;
+
     font-family: 'JetBrains Mono', monospace;
     overflow-x: hidden;
 } 
@@ -59,6 +66,9 @@ body {
         color: $bg-1;
         background-color: $sky;
         border-radius: 20px;
+    }
+    a:nth-child(1) i {
+        font-size: 1.2rem;
     }
 }
 
@@ -156,6 +166,8 @@ body {
         border-radius: 10px;
 
         color: $blue-1;
+
+        box-shadow: 0 0 20px 5px #ffffff10;
 
         h1 {
             position: absolute;
@@ -275,3 +287,25 @@ pre[class*="language-"] {
         }
     }
 }
+
+
+@media (max-width: 500px) {
+    .topbar a {
+        font-size: 1.4rem; 
+    }
+    
+    .topbar a:nth-child(1) i {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 345px) {
+    .topbar a {
+        font-size: 1rem; 
+    }
+    .topbar a:nth-child(1) i {
+        font-size: 0.75rem;
+    }
+}
+
