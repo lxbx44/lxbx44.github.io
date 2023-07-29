@@ -27,6 +27,7 @@ header {
     position: relative;
     padding: 0 2rem;
     .navbar {
+        z-index: 10;
         width: 100%;
         height: 60px;
         max-width: 1200px;
@@ -88,6 +89,7 @@ header {
         }
     }
     .dropdown_menu {
+        z-index: 10;
         display: none;
 
         position: absolute;
@@ -391,6 +393,145 @@ section#about {
             padding: 0.75rem 1.25rem;
             margin-bottom: 1.5rem;
         }
+        .about-img-mobile {
+            display: flex;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                width: 40%;
+                min-width: 10rem;
+                border-radius: 50%;
+                position: relative;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    z-index: 0;
+                }
+            }
+            div:hover {
+                scale: 1.1;
+                transition: all ease 0.2s;
+            }
+            a {
+                text-decoration: none;
+                h4 {
+                    color: $text;
+                    margin-top: 2rem;
+                    font-weight: bold;
+                    margin-bottom: 0.5rem;
+                }
+                i {
+                    color: $text;
+                    &:hover {
+                        color: $sky;
+                        transition: all ease 0.2s;
+                    }
+
+                }
+            }
+        }
     }
 }
 
+@media (max-width: 870px) {
+    section#about {
+        .about-img {
+            width: 30vw;
+        }
+        .about-content {
+            width: 70vw;
+            p {
+                font-size: 1rem;
+                line-height: calc(1.5 * 1);
+            }
+
+            .contact-el {
+                font-size: 1rem;
+                a {
+                    background: linear-gradient(
+                    to right,
+                    $bg,
+                    $bg
+                    ),
+                    linear-gradient(
+                    to right,
+                    #E40303,
+                    #FF8C00,
+                    #FFED00,
+                    #008026,
+                    #24408E,
+                    #732982
+                    );
+                    background-size: 100% 2px, 0 2px;
+                    background-position: 100% 100%, 0 100%;
+                    background-repeat: no-repeat;
+                    transition: background-size 400ms;
+                    &:hover {
+                        background-size: 0 2px, 100% 2px;
+                    }
+                }
+                color: $bg;
+                border-radius: 15px;
+                background-color: $sky;
+                width: fit-content;
+                padding: 0.5rem 1.15rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
+@media (max-width: 720px) {
+    section#about {
+        .about-img {
+            display: none;
+        }
+        .about-content {
+            width: 85vw;
+
+            .about-img-mobile {
+                display: flex;
+            }
+
+            p {
+                font-size: 1rem;
+                line-height: calc(1.5 * 1);
+            }
+
+            .contact-el {
+                font-size: 0.8rem;
+                a {
+                    background: linear-gradient(
+                    to right,
+                    $bg,
+                    $bg
+                    ),
+                    linear-gradient(
+                    to right,
+                    #E40303,
+                    #FF8C00,
+                    #FFED00,
+                    #008026,
+                    #24408E,
+                    #732982
+                    );
+                    background-size: 100% 2px, 0 2px;
+                    background-position: 100% 100%, 0 100%;
+                    background-repeat: no-repeat;
+                    transition: background-size 400ms;
+                    &:hover {
+                        background-size: 0 2px, 100% 2px;
+                    }
+                }
+                color: $bg;
+                border-radius: 15px;
+                background-color: $sky;
+                width: fit-content;
+                padding: 0.4rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
