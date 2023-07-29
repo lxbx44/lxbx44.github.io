@@ -1,4 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@keyframes line-color-animation {
+  0% {
+    background-color: #89dceb;
+  }
+  25% {
+    background-color: #f5c2e7;
+  }
+  50% {
+    background-color: #FFFFFF;
+  }
+  75% {
+    background-color: #f5c2e7;
+  }
+  100% {
+    background-color: #89dceb;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -234,11 +251,17 @@ section#about .about-img {
   justify-content: center;
   align-items: center;
 }
-section#about .about-img img {
-  width: 50%;
+section#about .about-img .about-img-img {
+  width: 24.5vw;
+  height: 24.5vw;
   border-radius: 50%;
+  position: relative;
+  overflow: hidden;
 }
-section#about .about-img img:hover {
+section#about .about-img .about-img-img img {
+  width: 100%;
+}
+section#about .about-img div:hover {
   scale: 1.1;
   transition: all ease 0.2s;
 }
@@ -256,18 +279,46 @@ section#about .about-content {
   padding: 1rem 2rem;
   overflow-y: auto;
 }
+section#about .about-content a {
+  color: inherit;
+  text-decoration: none;
+  background: linear-gradient(to right, #89dceb, #89dceb), linear-gradient(to right, #E40303, #FF8C00, #FFED00, #008026, #24408E, #732982);
+  background-size: 100% 2px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+section#about .about-content a:hover {
+  background-size: 0 2px, 100% 2px;
+}
 section#about .about-content .break {
   border-radius: 50px;
   height: 2px;
   width: 100%;
   background-color: #89dceb;
   margin: 2rem 0;
+  animation: line-color-animation 5s infinite;
 }
 section#about .about-content h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
   font-style: italic;
+}
+section#about .about-content h3 {
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 2.4;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+section#about .about-content p {
+  font-size: 1.15rem;
+  line-height: 1.725;
+  margin-bottom: 1.5rem;
+}
+section#about .about-content #ibo-img {
+  width: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

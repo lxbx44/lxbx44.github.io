@@ -1,0 +1,19 @@
+@import 'col';
+
+@keyframes line-color-animation {
+    0% {
+        background-color: $sky;
+    }
+    25% {
+        background-color: $pink;
+    }
+    50% {
+        background-color: $white;
+    }
+    75% {
+        background-color: $pink;
+    }
+    100% {
+        background-color: $sky;
+    }
+}
