@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@import 'col';
+@import 'keyframes';
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+    background-color: $bg;
+    background-image: url('/img/bg.svg');    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: auto center;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+header {
+    position: relative;
+    padding: 0 2rem;
+    .navbar {
+        width: 100%;
+        height: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        ul {
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            background: rgba($color: #000, $alpha: 0.3);
+            backdrop-filter: blur(5px);
+        }
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: $text;
+            font-size: 1rem;
+        }
+        a:hover {
+            color: $sky;
+        }
+
+
+        .logo a {
+            font-size: 1.5rem;
+            font-weight: bold; 
+        }
+        .links {
+            display: flex;
+            gap: 2rem;
+        }
+        .toggle_btn {
+            color: $text;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+        }
+        .action_btn {
+            background-color: $sky;
+            color: $bg;
+            padding: 0.5rem 1rem;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: scale 200ms ease;
+        }
+        .action_btn:hover{
+            scale: 1.05;
+            color: $bg;
+        }
+        .action_btn:active {
+            scale: 0.95;
+        }
+    }
+    .dropdown_menu {
+        display: none;
+
+        position: absolute;
+        right: 2rem;
+        top: 60px;
+        height: 0;
+        width: 300px;
+        background: rgba($color: #fff, $alpha: 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: height 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        li {
+            list-style: none;
+            padding: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                text-decoration: none;
+                color: $text;
+                font-size: 1rem;
+            }
+            a:hover {
+                color: $sky;
+            }
+        }
+        
+        .action_btn {
+            background-color: $sky;
+            color: $bg;
+            padding: 0.5rem 1rem;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: scale 200ms ease;
+
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .action_btn:hover{
+            scale: 1.05;
+            color: $bg;
+        }
+        .action_btn:active {
+            scale: 0.95;
+        }
+        
+    }
+    .dropdown_menu.open {
+        height: 240px;
+    }
+}
+
+@media (max-width: 840px) {
+    header {
+        .navbar {
+            .links,
+            .action_btn {
+                display: none;
+            }
+            .toggle_btn {
+                display: block;
+            }
+        }
+        .dropdown_menu {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        .dropdown_menu {
+            left: 2rem;
+            width: unset;
+        }
+    }
+}
+
+
+section#main-section {
+    height: calc(95vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $text;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        text-transform: bold;
+    }
+    p {
+        max-width: 100vw;
+        padding: 0 20vw;
+        margin-bottom: 1rem;
+        text-transform: bold;
+    }
+    button {
+        background-color: $sky;
+        padding: 0.5rem 1rem;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: scale 200ms ease;
+
+        a {
+            text-decoration: none;
+            color: $bg;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+    }
+    button:hover{
+        scale: 1.05;
+        color: $bg;
+    }
+    button:active {
+        scale: 0.95;
+    }
+}
+
+@media (max-width: 705px) {
+    section#main-section {
+        h1 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 0.9rem;
+        }
+    }
+}
+@media (max-width: 470px) {
+    section#main-section {
+        h1 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 0.7rem;
+        }
+    }
+}
+
+
+section#footer {
+    color: $text;
+    font-size: 0.65rem;
+    text-align: center;
+}
+
+
+/*
+ABOUT
+*/
+
+section#about {
+    height: calc(95vh - 60px);
+    display: flex;
+    justify-content: center;
+
+    .about-img {
+        width: 35vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 50%;
+            border-radius: 50%;
+        }
+        img:hover {
+            scale: 1.1;
+            transition: all ease 0.2s;
+        }
+        h3 {
+            color: $text;
+            margin-top: 2rem;
+            font-weight: bold;
+        }
+    }
+    .about-content {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        width: 55vw;
+        border-radius: 10px;
+        color: $text;
+        padding: 1rem 2rem;
+        overflow-y: auto;
+
+        .break {
+            border-radius: 50px;
+            height: 2px;
+            width: 100%;
+            background-color: $sky;
+            margin: 2rem 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem; 
+            text-transform: uppercase;
+            font-style: italic;
+        }
+
+    }
+}
+
