@@ -4,16 +4,33 @@
     background-color: #89dceb;
   }
   25% {
-    background-color: #f5c2e7;
+    background-color: #F5A9B8;
   }
   50% {
-    background-color: #FFFFFF;
+    background-color: #cdd6f4;
   }
   75% {
-    background-color: #f5c2e7;
+    background-color: #F5A9B8;
   }
   100% {
     background-color: #89dceb;
+  }
+}
+@keyframes text-color-animation {
+  0% {
+    color: #89dceb;
+  }
+  25% {
+    color: #F5A9B8;
+  }
+  50% {
+    color: #cdd6f4;
+  }
+  75% {
+    color: #F5A9B8;
+  }
+  100% {
+    color: #89dceb;
   }
 }
 html {
@@ -265,10 +282,20 @@ section#about .about-img div:hover {
   scale: 1.1;
   transition: all ease 0.2s;
 }
-section#about .about-img h3 {
+section#about .about-img a {
+  text-decoration: none;
+}
+section#about .about-img a h3 {
   color: #cdd6f4;
   margin-top: 2rem;
   font-weight: bold;
+}
+section#about .about-img a i {
+  color: #cdd6f4;
+}
+section#about .about-img a i:hover {
+  color: #89dceb;
+  transition: all ease 0.2s;
 }
 section#about .about-content {
   margin-top: 1rem;
@@ -297,13 +324,14 @@ section#about .about-content .break {
   width: 100%;
   background-color: #89dceb;
   margin: 2rem 0;
-  animation: line-color-animation 5s infinite;
+  animation: line-color-animation 20s infinite;
 }
 section#about .about-content h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
   font-style: italic;
+  animation: text-color-animation 20s infinite;
 }
 section#about .about-content h3 {
   font-weight: bold;
@@ -313,12 +341,27 @@ section#about .about-content h3 {
   margin-top: 0.5rem;
 }
 section#about .about-content p {
-  font-size: 1.15rem;
-  line-height: 1.725;
+  font-size: 1.1rem;
+  line-height: 1.65;
   margin-bottom: 1.5rem;
 }
-section#about .about-content #ibo-img {
-  width: 2rem;
+section#about .about-content .contact-el {
+  color: #1e1e2e;
+  border-radius: 15px;
+  background-color: #89dceb;
+  width: fit-content;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+section#about .about-content .contact-el a {
+  background: linear-gradient(to right, #1e1e2e, #1e1e2e), linear-gradient(to right, #E40303, #FF8C00, #FFED00, #008026, #24408E, #732982);
+  background-size: 100% 2px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+section#about .about-content .contact-el a:hover {
+  background-size: 0 2px, 100% 2px;
 }
 
 /*# sourceMappingURL=styles.css.map */

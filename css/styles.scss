@@ -279,10 +279,21 @@ section#about {
             scale: 1.1;
             transition: all ease 0.2s;
         }
-        h3 {
-            color: $text;
-            margin-top: 2rem;
-            font-weight: bold;
+        a {
+            text-decoration: none;
+            h3 {
+                color: $text;
+                margin-top: 2rem;
+                font-weight: bold;
+            }
+            i {
+                color: $text;
+                &:hover {
+                    color: $sky;
+                    transition: all ease 0.2s;
+                }
+
+            }
         }
     }
     .about-content {
@@ -326,7 +337,7 @@ section#about {
             width: 100%;
             background-color: $sky;
             margin: 2rem 0;
-            animation: line-color-animation 5s infinite;
+            animation: line-color-animation 20s infinite;
         }
 
         h1 {
@@ -334,6 +345,7 @@ section#about {
             margin-bottom: 1rem; 
             text-transform: uppercase;
             font-style: italic;
+            animation: text-color-animation 20s infinite;
         }
 
         h3 {
@@ -344,15 +356,41 @@ section#about {
             margin-top: 0.5rem;
         }
         p {
-            font-size: 1.15rem;
-            line-height: calc(1.5 * 1.15);
+            font-size: 1.1rem;
+            line-height: calc(1.5 * 1.1);
             margin-bottom: 1.5rem;
         }
-
-        #ibo-img {
-            width: 2rem;
+        .contact-el {
+            a {
+                background: linear-gradient(
+                to right,
+                $bg,
+                $bg
+                ),
+                linear-gradient(
+                to right,
+                #E40303,
+                #FF8C00,
+                #FFED00,
+                #008026,
+                #24408E,
+                #732982
+                );
+                background-size: 100% 2px, 0 2px;
+                background-position: 100% 100%, 0 100%;
+                background-repeat: no-repeat;
+                transition: background-size 400ms;
+                &:hover {
+                    background-size: 0 2px, 100% 2px;
+                }
+            }
+            color: $bg;
+            border-radius: 15px;
+            background-color: $sky;
+            width: fit-content;
+            padding: 0.75rem 1.25rem;
+            margin-bottom: 1.5rem;
         }
-
     }
 }
 
