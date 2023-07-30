@@ -440,6 +440,9 @@ section#about .about-content .about-img-mobile a i:hover {
   section#about .about-content .contact-el a:hover {
     background-size: 0 2px, 100% 2px;
   }
+  section#about .about-content #spotify-stats {
+    width: 60%;
+  }
 }
 @media (max-width: 720px) {
   section#about .about-img {
@@ -473,6 +476,14 @@ section#about .about-content .about-img-mobile a i:hover {
   }
   section#about .about-content .contact-el a:hover {
     background-size: 0 2px, 100% 2px;
+  }
+  section#about .about-content #spotify-stats {
+    width: 75%;
+  }
+}
+@media (max-width: 450px) {
+  section#about .about-content #spotify-stats {
+    width: 100%;
   }
 }
 

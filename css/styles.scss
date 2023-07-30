@@ -488,6 +488,9 @@ section#about {
                 padding: 0.5rem 1.15rem;
                 margin-bottom: 1.5rem;
             }
+            #spotify-stats {
+                width: 60%;
+            }
         }
     }
 }
@@ -539,6 +542,20 @@ section#about {
                 width: fit-content;
                 padding: 0.4rem 1rem;
                 margin-bottom: 1.5rem;
+            }
+            #spotify-stats {
+                width: 75%;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    section#about {
+        .about-content {
+            #spotify-stats {
+                width: 100%;
             }
         }
     }
