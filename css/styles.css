@@ -299,7 +299,7 @@ section#about .about-img .about-img-img img {
 }
 section#about .about-img div:hover {
   scale: 1.1;
-  transition: all ease 0.2s;
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 section#about .about-img a {
   text-decoration: none;
@@ -408,7 +408,7 @@ section#about .about-content .about-img-mobile div img {
 }
 section#about .about-content .about-img-mobile div:hover {
   scale: 1.1;
-  transition: all ease 0.2s;
+  transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 section#about .about-content .about-img-mobile a {
   text-decoration: none;

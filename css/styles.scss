@@ -278,7 +278,7 @@ section#about {
         }
         div:hover {
             scale: 1.1;
-            transition: all ease 0.2s;
+            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         a {
             text-decoration: none;
@@ -420,7 +420,7 @@ section#about {
             }
             div:hover {
                 scale: 1.1;
-                transition: all ease 0.2s;
+                transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
             }
             a {
                 text-decoration: none;
