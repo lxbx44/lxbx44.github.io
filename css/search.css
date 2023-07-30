@@ -1,39 +1,37 @@
-@import '_col.scss';
-
-@import url("https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-/* The typing effect */
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
-@keyframes typing {
-  from {
-    width: 0;
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@keyframes line-color-animation {
+  0% {
+    background-color: #89dceb;
   }
-  to {
-    width: 17rem;
-  }
-}
-@keyframes typing2 {
-  from {
-    width: 0;
-  }
-  to {
-    width: 13rem;
-  }
-}
-@keyframes typing3 {
-  from {
-    width: 0;
-  }
-  to {
-    width: 11rem;
-  }
-}
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent;
+  25% {
+    background-color: #F5A9B8;
   }
   50% {
-    border-color: #babbf1;
+    background-color: #cdd6f4;
+  }
+  75% {
+    background-color: #F5A9B8;
+  }
+  100% {
+    background-color: #89dceb;
+  }
+}
+@keyframes text-color-animation {
+  0% {
+    color: #89dceb;
+  }
+  25% {
+    color: #F5A9B8;
+  }
+  50% {
+    color: #cdd6f4;
+  }
+  75% {
+    color: #F5A9B8;
+  }
+  100% {
+    color: #89dceb;
   }
 }
 @keyframes out {
@@ -52,36 +50,6 @@
     right: 0;
   }
 }
-@keyframes popupPrj {
-  0% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes popupIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes popupOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 * {
   margin: 0;
   padding: 0;
@@ -89,13 +57,13 @@
 
 * {
   font-family: "JetBrains Mono", monospace;
-  color: #c6d0f5;
+  color: #cdd6f4;
 }
 
 body {
   height: 100vh;
   width: 100vw;
-  background-color: #232634;
+  background-color: #1e1e2e;
   background-image: url("/img/bg.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -123,7 +91,7 @@ body {
   font-size: 25px;
 }
 .topbar .links a i:hover {
-  color: #99d1db;
+  color: #89dceb;
 }
 .topbar .links a:nth-child(2) i {
   font-size: 24px;
@@ -139,7 +107,7 @@ body {
   font-size: 25px;
 }
 .topbar .info a i:hover {
-  color: #99d1db;
+  color: #89dceb;
 }
 
 #clock {
@@ -176,14 +144,14 @@ body {
   margin: auto;
   transform: translateY(200px);
   border-radius: 10px;
-  border-color: #99d1db;
-  background-color: #303446;
+  border-color: #89dceb;
+  background-color: #313244;
   font-size: 18px;
 }
 
 #apps_btn:hover {
-  box-shadow: 0 0 20px 5px #99d1db;
-  border-color: #99d1db;
+  box-shadow: 0 0 20px 5px #89dceb;
+  border-color: #89dceb;
   border-style: solid;
   transition: all ease-in-out 250ms;
 }
@@ -208,9 +176,8 @@ body {
   height: 100%;
   width: 96%;
   border-radius: 20px;
-  background-color: #303446;
-  opacity: 0.8;
-  border-color: #99d1db;
+  background-color: #313244;
+  border-color: #89dceb;
   border-style: solid;
   padding: 0 2%;
   font-size: 18px;
@@ -219,8 +186,8 @@ body {
   outline: none;
 }
 .search_bar div input:hover {
-  box-shadow: 0 0 20px 5px #99d1db;
-  border-color: #99d1db;
+  box-shadow: 0 0 20px 5px #89dceb;
+  border-color: #89dceb;
   border-style: solid;
   transition: all ease-in-out 500ms;
 }
@@ -236,9 +203,9 @@ body {
   bottom: 0;
   margin: auto auto;
   position: absolute;
-  background-color: #303446;
+  background-color: #313244;
   border-style: solid;
-  border-color: #99d1db;
+  border-color: #89dceb;
   border-radius: 20px;
   overflow-y: scroll;
 }
@@ -250,7 +217,7 @@ body {
   margin-left: 3vw;
 }
 #apps_popup > div h3 {
-  color: #99d1db;
+  color: #89dceb;
   font-size: 2vw;
   margin-top: 2rem;
 }
@@ -261,21 +228,23 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
+  align-content: center;
 }
 #apps_popup > div div a {
   border-radius: 10px;
   text-decoration: none;
+  height: 100%;
   font-size: 1.4vw;
 }
 #apps_popup > div div a div p {
   margin-left: 1vw;
 }
 #apps_popup > div div a:hover {
-  background-color: #99d1db;
+  background-color: #89dceb;
   transition: all ease-in-out 0.15s;
 }
 #apps_popup > div div a:hover div p {
-  color: #303446;
+  color: #313244;
 }
 #apps_popup .close_popup {
   position: absolute;
@@ -289,10 +258,10 @@ body {
   border: none;
   text-decoration: none;
   border-radius: 50%;
-  background-color: #99d1db;
+  background-color: #89dceb;
 }
 #apps_popup .close_popup i {
-  color: #303446;
+  color: #313244;
 }
 #apps_popup .close_popup:hover {
   animation: all ease-in 500ms;
@@ -300,7 +269,7 @@ body {
 #apps_popup .close_popup:hover i {
   transform: scale(1.2);
   animation: all ease-in 500ms;
-  color: #292c3c;
+  color: #181825;
 }
 
 @media (max-width: 850px) {
@@ -323,7 +292,7 @@ body {
   }
   #apps_popup > div h3 {
     padding: 10px 20px;
-    color: #99d1db;
+    color: #89dceb;
     font-size: 25px;
     float: left;
     border-radius: 10px;
