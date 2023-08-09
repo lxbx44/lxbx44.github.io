@@ -295,7 +295,7 @@ section#about .about-img .about-img-img {
   overflow: hidden;
 }
 section#about .about-img .about-img-img img {
-  width: 100%;
+  height: 100%;
 }
 section#about .about-img div:hover {
   scale: 1.1;
