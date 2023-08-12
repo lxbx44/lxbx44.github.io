@@ -14,24 +14,27 @@ toggleBtn.onclick = () => {
 
 
 
+const openIconClass = 'fa-chevron-down';
+const closeIconClass = 'fa-xmark';
 
-let open = 'fa-angles-down';
-let close = 'fa-xmark';
+const openID = 'prj-open';
+const closeID = 'prj-closed';
 
-const pythonArr = document.querySelector('.pc-python i');
-const pythonContent = document.querySelector('.pc-python div');
+const iBtns = document.querySelectorAll('.prjcont .fa-solid');
 
-pythonArr.addEventListener('click', () => {
-    if (pythonArr.classList.contains(close)) {
-        pythonArr.classList.remove(close);
-        pythonArr.classList.add(open);
+iBtns.forEach((appBtn) => {
+    appBtn.addEventListener('click', () => {
+        const parent = appBtn.closest('.prjcont');
 
-        pythonContent.style.display = 'none';
-    } else {
-        pythonArr.classList.remove(open);
-        pythonArr.classList.add(close);
+        if (parent.id == openID) {
+            parent.id = closeID;
+            appBtn.classList.add(openIconClass);
+            appBtn.classList.remove(closeIconClass);
+        } else {
+            parent.id = openID;
+            appBtn.classList.add(closeIconClass);
+            appBtn.classList.remove(openIconClass);
+        }
+    });
+});
 
-        pythonContent.style.display = 'block';
-
-    }
-})
