@@ -599,7 +599,8 @@ section#projects {
            width: calc(100% - 2rem);
            height: fit-content;
            border-radius: 15px;
-           background-color: rgba($color: $sky, $alpha: 0.6);
+           background-color: rgba($color: $sky, $alpha: 0.4);
+           backdrop-filter: blur(5px);
            color: $bg;
            padding: 1rem;
            margin-bottom: 2rem;
