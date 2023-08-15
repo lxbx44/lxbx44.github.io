@@ -15,7 +15,7 @@ toggleBtn.onclick = () => {
 
 
 const openIconClass = 'fa-chevron-down';
-const closeIconClass = 'fa-xmark';
+const closeIconClass = 'fa-chevron-up';
 
 const openID = 'prj-open';
 const closeID = 'prj-closed';
@@ -25,12 +25,18 @@ const iBtns = document.querySelectorAll('.prjcont .fa-solid');
 iBtns.forEach((appBtn) => {
     appBtn.addEventListener('click', () => {
         const parent = appBtn.closest('.prjcont');
+        const contentDiv = parent.querySelector('div');
 
         if (parent.id == openID) {
-            parent.id = closeID;
             appBtn.classList.add(openIconClass);
             appBtn.classList.remove(closeIconClass);
+            contentDiv.style.maxHeight = '0px';
+            setTimeout(() => {
+                parent.id = closeID;
+            }, 200);
+
         } else {
+            contentDiv.style.maxHeight = contentDiv.scrollHeight + 'px';
             parent.id = openID;
             appBtn.classList.add(closeIconClass);
             appBtn.classList.remove(openIconClass);
