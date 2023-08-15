@@ -20,7 +20,7 @@ const closeIconClass = 'fa-chevron-up';
 const openID = 'prj-open';
 const closeID = 'prj-closed';
 
-const iBtns = document.querySelectorAll('.prjcont .fa-solid');
+const iBtns = document.querySelectorAll('.prjcont .closeopen');
 
 iBtns.forEach((appBtn) => {
     appBtn.addEventListener('click', () => {
@@ -36,7 +36,7 @@ iBtns.forEach((appBtn) => {
             }, 200);
 
         } else {
-            contentDiv.style.maxHeight = contentDiv.scrollHeight + 'px';
+            contentDiv.style.maxHeight = '1000px';
             parent.id = openID;
             appBtn.classList.add(closeIconClass);
             appBtn.classList.remove(openIconClass);

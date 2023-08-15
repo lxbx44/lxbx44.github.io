@@ -279,6 +279,7 @@ section#about {
             img {
                 height: 100%;
             }
+            transition: all 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
         div:hover {
             scale: 1.1;
@@ -570,6 +571,33 @@ section#projects {
     padding: 0 2rem;
     color: $text;
 
+    a {
+        color: inherit;
+        text-decoration: none;
+        background: linear-gradient(
+        to right,
+        $sky,
+        $sky
+        ),
+        linear-gradient(
+        to right,
+        #E40303,
+        #FF8C00,
+        #FFED00,
+        #008026,
+        #24408E,
+        #732982
+        );
+        background-size: 100% 2px, 0 2px;
+        background-position: 100% 100%, 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 400ms;
+    }
+    a:hover {
+        background-size: 0 2px, 100% 2px;
+    }
+
+
     h1 {
         height: fit-content;
         font-size: 2rem;
@@ -599,7 +627,7 @@ section#projects {
            width: calc(100% - 2rem);
            height: fit-content;
            border-radius: 15px;
-           background-color: rgba($color: $sky, $alpha: 0.4);
+           background-color: rgba($color: $sky, $alpha: 0.7);
            backdrop-filter: blur(5px);
            color: $bg;
            padding: 1rem;
@@ -623,6 +651,8 @@ section#projects {
                    margin-bottom: 1rem;
                    transition: max-height cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
                }
+
+
            }
 
            .prjcont {
@@ -657,7 +687,58 @@ section#projects {
                    grid-row: 1 / 2;
                    justify-self: flex-end;
                }
+
            }
        } 
+    }
+}
+
+#code-block {
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    background-color: $bg-3;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+
+    p {
+        user-select: none;
+        span {
+            user-select: text;
+        }
+        margin: 0;
+    }
+    i {
+        transition: all ease-in-out 0.2s;
+
+        &:hover {
+            color: $sky;
+        }
+    }
+}
+
+#single-code {
+    padding: 0.2rem 0.3rem;
+    border-radius: 10px;
+    background-color: $bg-3;
+    color: $sky;
+}
+
+.passwd-manager {
+    h3 {
+        margin-top: 1rem;
+        margin-bottom: 0.7rem;
+    }
+    li {
+        margin-left: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    p {
+        margin: 0.6rem 0;
+    }
+    img {
+        width: 80%;
+        border-radius: 15px;
+        border: solid $sky 2px;
     }
 }
