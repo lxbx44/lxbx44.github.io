@@ -50,6 +50,20 @@
     right: 0;
   }
 }
+@keyframes copyPopup {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -647,6 +661,20 @@ section#projects .prj-content .prj-prj .prjcont i {
 }
 .prj-c-prj p {
   margin: 0.6rem 0;
+}
+
+#copyPopup {
+  position: absolute;
+  bottom: 15vh;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #fadcef;
+  border-radius: 20px;
+  padding: 1rem 2rem;
+  color: #1e1e2e;
+  border: solid #1e1e2e 3px;
+  text-transform: uppercase;
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

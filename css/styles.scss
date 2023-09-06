@@ -741,3 +741,22 @@ section#projects {
         margin: 0.6rem 0;
     }
 }
+
+
+
+
+
+
+#copyPopup {
+    position: absolute;
+    bottom: 15vh;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: $pink;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    color: $bg;
+    border: solid $bg 3px;
+    text-transform: uppercase;
+    display: none;
+}
