@@ -11,7 +11,9 @@ copyElements.forEach((cpyBtn) => {
         const popup = document.querySelector('#copyPopup');
         
         popup.style.display = 'block';
-        popup.style.animation = 'copyPopup 2s'
-        popup.style.display = 'none';
+        popup.style.animation = 'copyPopup 1s'
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 1000)
     })
 })
