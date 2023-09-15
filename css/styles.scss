@@ -620,7 +620,6 @@ section#projects {
         color: $text;
     }
     .prj-content {
-        height: calc(100% - 3rem - 5vh - 62px);
         overflow-y: auto;
 
        .prj-prj {
@@ -707,8 +706,10 @@ section#projects {
 
     p {
         user-select: none;
+        color: $pink;
         span {
             user-select: text;
+            color: $text;
         }
         margin: 0;
     }

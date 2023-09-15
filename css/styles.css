@@ -561,7 +561,6 @@ section#projects a {
   color: #cdd6f4;
 }
 section#projects .prj-content {
-  height: calc(100% - 3rem - 5vh - 62px);
   overflow-y: auto;
 }
 section#projects .prj-content .prj-prj {
@@ -632,10 +631,12 @@ section#projects .prj-content .prj-prj .prjcont i {
 }
 #code-block p {
   user-select: none;
+  color: #fadcef;
   margin: 0;
 }
 #code-block p span {
   user-select: text;
+  color: #cdd6f4;
 }
 #code-block i {
   transition: all ease-in-out 0.2s;
