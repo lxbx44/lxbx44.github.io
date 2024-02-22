@@ -401,12 +401,6 @@ section#about .about-content .contact-el a {
 section#about .about-content .contact-el a:hover {
   background-size: 0 2px, 100% 2px;
 }
-section#about .about-content #spotify-stats {
-  border: solid #89dceb;
-  border-radius: 10px;
-  width: 50%;
-  margin-bottom: 1.5rem;
-}
 section#about .about-content .about-img-mobile {
   display: flex;
   display: none;
